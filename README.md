@@ -1,14 +1,14 @@
-# ass
+# ass [![Go Reference](https://pkg.go.dev/badge/github.com/Thiht/ass.svg)](https://pkg.go.dev/github.com/Thiht/ass)
 
-`ass` is a tiny testing lib making error assertions easier. It basically consists of a single function:
+`ass` is a non-inflated testing lib making error assertions easier. It basically does one thing:
 
 ```go
 ass.Err(t, ...)
 ```
 
-As you can see, it spells `assErrt`, which is convenient and conveys the intent very clearly.
+As you can see, it spells `assErrt`, which is convenient and conveys the intent very clearly. Writing `ass` is also 50% more efficient than writing `assert`.
 
-`ass` can be used with many different inputs, making it very practical when doing table driven testing:
+`ass` accepts many different inputs (one at a time though, a `bbl` companion lib might exist in the future if some expansion is needed), making it very practical when doing table driven testing:
 
 ```go
 err := f()
@@ -26,3 +26,5 @@ ass.Err(t, err, ErrValue)
 // errors.As matching
 ass.Err(t, err, reflect.TypeOf(&ErrType{}))
 ```
+
+Please star this repo if you like `ass`.
